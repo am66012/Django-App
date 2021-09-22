@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styles/home.css'%}">
+</head>
+<body>
+    <div>
+        <nav class="nav_head">
+            
+            <a href="{% url 'admin:index' %}">Admin</a>
+            <a href="{% url 'myApp:school_list' %}">Student List</a>
+            
+            
+        </nav>
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
+        
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends "StudentDetails/basic_app_base.html" %}
+
+{% block content %}
+    <h1>Below is the detail of the selected school!!!</h1>
+    <h2>school details:</h2>
+    <p>Name: {{school_details.name}}</p>
+    <p>Principal: {{school_details.principal}}</p>
+    <p>Location: {{school_details.location}}</p>
+
+    <h3>Students: </h3>
+
+    {% for student in school_details.students.all %}
+        <p>
+            {{student.name}} who is {{student.age}} year old.
+        </p>
+    {% endfor %}
+    <a class = "l1" href="{% url 'myApp:update' pk=school_details.pk %}">Update details</a>
+    <a class = "l1" href="{% url 'myApp:delete' pk=school_details.pk %}">Delete details</a>
+{% endblock %}

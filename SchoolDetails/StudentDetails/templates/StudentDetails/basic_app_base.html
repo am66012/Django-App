@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/home.css'%}">
+    <title>School Ka Khela</title>
+</head>
+<body>
+    <div class="container">
+        <a class = "l1" href="{% url 'myApp:create' %}">Create New Data</a>
+        <a class = "l1" href="{% url 'myApp:school_list' %}">School List</a>
+    </div>
+    <div class="nav_head">
+        {% block content %}
+        {% endblock %}
+    </div>
+    
+</body>
+</html>
